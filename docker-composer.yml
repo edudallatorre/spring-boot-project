@@ -1,24 +1,24 @@
+version: '3' # Docker Compose version
+
 services:
     db:
         container_name: postgres
-        image: postgres
+        image: postgres:alpine
         environment:
-            POSTGRES_USER: test
+            POSTGRES_USER: postgres-0
             POSTGRES_PASSWORD: password
             PGDATA: /data/postgres
         volumes:
             - db:/data/postgres
         ports:
-            - "5332:5432"
-        network:
-            - db
+            - "5432:5432"
         restart: unless-stopped
 
+# Define the network outside of the 'services' section
 networks:
     db:
         driver: bridge
 
+# Define the volume outside of the 'services' section
 volumes:
     db:
-
-

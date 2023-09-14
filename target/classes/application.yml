@@ -1,6 +1,21 @@
 server:
   port: 8080
 
-spring:
-   main:
-     web-application-type: servlet
+
+  datasource:
+    url: jdbc:mysql://localhost:5332/customer
+    username: postgres-0
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect:
+        format_sql: true
+    show-sql: true
+  spring:
+    main:
+      web-application-type: servlet
+
+
