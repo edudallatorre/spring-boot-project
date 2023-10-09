@@ -7,6 +7,7 @@ services:
     environment:
       POSTGRES_USER: edudallatorre
       POSTGRES_PASSWORD: password
+      POSTGRES_DB: customer
       PGDATA: /data/postgres
     volumes:
       - db:/data/postgres
